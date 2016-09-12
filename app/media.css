@@ -1,0 +1,128 @@
+@media screen and (min-width: 300px) and (max-width:320px){
+    .task {
+        max-width: 285px;
+        margin: 2% 5%;
+    }
+    #header > div > div > div.lang {
+        display: none;
+    }
+    #footer > div.center {
+        text-align: center;
+    }
+}
+@media screen and (min-width: 350px) and (max-width:360px){
+    .task {
+        margin: 2% 7.5%;
+    }
+    #header > div > div > div.lang {
+        display: none;
+    }
+    #footer > div.center {
+        text-align: center;
+    }
+}
+@media screen and (min-width: 370px) and (max-width:375px){
+    .task {
+        margin: 2% 9%;
+    }
+    #header > div > div > div.lang {
+        display: none;
+    }
+    #footer > div.center {
+        text-align: center;
+    }
+}
+@media screen and (min-width: 405px) and (max-width:435px){
+    .task {
+        margin: 2% 12%;
+    }
+    #header > div > div > div.lang {
+        display: none;
+    }
+    #footer > div.center {
+        text-align: center;
+    }
+}
+@media screen and (min-width: 430px) and (max-width:435px){
+    .task {
+        margin: 2% 16%;
+    }
+    #header > div > div > div.lang {
+        display: none;
+    }
+    #footer > div.center {
+        text-align: center;
+    }
+}
+@media screen and (min-width: 475px) and (max-width:480px){
+    .task {
+        margin: 2% 18%;
+    }
+    #header > div > div > div.lang {
+        display: none;
+    }
+    #footer > div.center {
+        text-align: center;
+    }
+}
+@media screen and (min-width: 595px) and (max-width:600px){
+    .task {
+        margin: 2% 24%;
+    }
+    #header > div > div > div.lang {
+        display: none;
+    }
+    #footer > div.center {
+        text-align: center;
+    }
+}
+@media screen and (min-width: 635px) and (max-width:640px){
+    .task {
+        margin: 2% 1.2%;
+    }
+    #header > div > div > div.lang {
+        display: none;
+    }
+    #footer > div.center {
+        text-align: center;
+    }
+}
+@media screen and (min-width: 765px) and (max-width:770px){
+    .task {
+        margin: 2% 8%;
+    }
+}
+@media screen and (min-width: 795px) and (max-width:800px){
+    .task {
+        margin: 2% 8%;
+    }
+}
+@media screen and (min-width: 900px) and (max-width:980px){
+    .task {
+        margin: 2% 8%;
+    }
+}
+@media screen and (min-width: 1020px) and (max-width:1025px){
+    .task {
+        margin: 2% 1.2%;
+    }
+    .heading1 {
+        font-size:80px
+    }
+    .heading4 {
+        margin-left:16%;
+        font-size:220%
+    }
+}
+@media screen and (min-width: 1026px) and (max-width:2000px){
+    .heading1 {
+        font-size:80px
+    }
+    .heading4 {
+        margin-left:16%;
+        font-size:220%
+    }
+    #footer > div > div > h4 {
+        font-size:200%
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "TITLE": "TODOApp",
+  "SUB_TITLE": "Manage your tasks",
+  "EN_LANG_TITLE": "English",
+  "DE_LANG_TITLE": "Spanish",
+  "TASK_BUTTON": "Add New Task",
+  "ADD_TASK_HEAD": "Add New Task!",
+  "TASK_NAME":"Task Name",
+  "DESC": "Descriptions :",
+  "STATUS": "Status :",
+  "START_DATE": "Start Date :",
+  "END_DATE": "End Date :",
+  "PRIO": "Priority :",
+  "DELETE_BUTTON": "Delete",
+  "CLOSE_BUTTON":"Close",
+  "RESET_BUTTON":"Reset",
+  "SAVE_BUTTON":"Save"
+}

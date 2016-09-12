@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="todoApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="todoApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="todoApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="todoApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="app/bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="app/bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" type="text/css" href="app/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  <!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">-->
+  <link rel="stylesheet" href="app/app.css">
+  <link rel="stylesheet" href="app/media.css">
+  <script src="app/bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <base href="/">
+</head>
+<body>
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <!--<div ng-view></div>-->
+  <div ui-view></div>
+
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="app/bower_components/angular/angular.js"></script>
+  <script src="app/bower_components/angular-route/angular-route.js"></script>
+  <script src="app/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="app/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+  <script src="app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="app/bower_components/angular-translate/angular-translate.js"></script>
+  <script src="app/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+
+  <script src="node_modules/angular-chart.js/node_modules/chart.js/dist/Chart.min.js"></script>
+  <script src="node_modules/angular-chart.js/dist/angular-chart.js"></script>
+
+  <script src="app/components/version/version.js"></script>
+  <script src="app/components/version/version-directive.js"></script>
+  <script src="app/components/version/interpolate-filter.js"></script>
+  <script src="app/modules/todo/dashboard/dashboard.controller.js"></script>
+  <script src="app/modules/todo/dashboard/dashboard.factory.js"></script>
+  <script src="app/modules/todo/dashboard/dashboard.translate.controller.js"></script>
+  <script src="app/modules/todo/dashboard/dashboard.task.directive.js"></script>
+  <script src="app/modules/todo/dashboard/dashboard.tasks.directive.js"></script>
+  <script src="app/modules/todo/dashboard/dashboaed.customValidation.directive.js"></script>
+  <script src="app/modules/todo/dashboard/common.calender.directive.js"></script>
+  <script src="app/modules/todo/app.module.js"></script>
+  <script src="app/modules/todo/app.config.js"></script>
+  <script src="app/modules/todo/app.run.js"></script>
+
+</body>
+</html>

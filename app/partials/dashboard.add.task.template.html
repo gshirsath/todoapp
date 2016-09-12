@@ -1,0 +1,104 @@
+<div class="">
+    <div class="modal-header">
+        <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <h3 class="modal-title" translate="ADD_TASK_HEAD"></h3>
+            </div>
+        </div>
+    </div>
+    <div class="modal-body">
+        <form name="form" class="css-form" novalidate>
+            <div class="row top-bottom-margin">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <label translate="TASK_NAME">:</label>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <input class="" type="text" ng-model="task.name" name="tName" required="" verify-task-name />
+                    <br />
+                    <div ng-show="form.$submitted || form.tName.$touched" >
+                        <span ng-show="form.tName.$error.required" class="text-danger">Task title is required.</span>
+                        <span ng-show="form.tName.$pending.taskName" class="">Checking if this task name is available...</span>
+                        <span ng-show="form.tName.$error.taskName" class="text-danger">This task name is already taken!</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row top-bottom-margin">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <label translate="DESC">:</label>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <input type="text" ng-model="task.description" name="tDesc" required="" />
+                    <br />
+                    <div ng-show="form.$submitted || form.tDesc.$touched">
+                        <span ng-show="form.tDesc.$error.required" class="text-danger">Task description is required.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row top-bottom-margin">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <label translate="STATUS">:</label>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <!--<input type="text" ng-model="task.status" name="tStatus" required="" />-->
+                    <select class="form-control input-sm" ng-model="task.status" name="tStatus" ng-options="taskStatus for taskStatus in allStatus" required="">
+                        <option value="">-Select status-</option>
+                    </select>
+                    <div ng-show="form.$submitted || form.tStatus.$touched">
+                        <span ng-show="form.tStatus.$error.required" class="text-danger">Task status is required.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row top-bottom-margin">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <label translate="START_DATE">:</label>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <!--<input type="text" ng-model="task['start-date']" name="tStartDate" required="" />-->
+                        <!--<common-date-picker optionalfildevalue="true" datemodalname ="'task[\'start-date\']'" datefieldname="'tStartDate'"></common-date-picker>-->
+                    <common-date-picker mandatoryfildevalue="true" datemodalname ="task.startDate" datefieldname="'tStartDate'"></common-date-picker>
+                    <br />
+                    <div ng-show="form.$submitted || form.tStartDate.$touched">
+                        <span ng-show="form.tStartDate.$error.required" class="text-danger">Task start date is required.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row top-bottom-margin">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <label translate="END_DATE">:</label>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <!--<input class="" type="text" name="tEndDate" ng-model="task['end-date']" />-->
+                    <common-date-picker mandatoryfildevalue="false" datemodalname ="task.endDate" datefieldname="'tEndDate'"></common-date-picker>
+                </div>
+            </div>
+            <div class="row top-bottom-margin">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <label translate="PRIO"></label>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <input type="text" ng-model="task.priority" name="tPriority" required="" />
+                    <br />
+                    <div ng-show="form.$submitted || form.tPriority.$touched">
+                        <span ng-show="form.tPriority.$error.required" class="text-danger">Task priority is required.</span>
+                    </div>
+                </div>
+            </div>
+            {{task | json}}
+            <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <input type="button" class="btn btn-primary" ng-click="resetForm(form)" value="Reset" />
+                    <input type="submit" class="btn btn-primary" ng-click="addTask(task,form)" value="Save"/>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="closePopup()" translate="CLOSE_BUTTON"></button>
+    </div>
+</div>

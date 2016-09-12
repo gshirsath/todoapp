@@ -1,0 +1,18 @@
+{
+  "TITLE": "TODOApp",
+  "SUB_TITLE": "Administrar sus tareas",
+  "EN_LANG_TITLE": "Inglés",
+  "DE_LANG_TITLE": "Español",
+  "TASK_BUTTON": "Añadir nueva tarea",
+  "ADD_TASK_HEAD": "Añadir nueva tarea!",
+  "TASK_NAME":"Nombre de la tarea",
+  "DESC": "Descripciones :",
+  "STATUS": "Estado :",
+  "START_DATE": "Fecha de inicio :",
+  "END_DATE": "Fecha final :",
+  "PRIO": "Prioridad :",
+  "DELETE_BUTTON": "Borrar",
+  "CLOSE_BUTTON": "Cerca",
+  "RESET_BUTTON":"Reiniciar",
+  "SAVE_BUTTON":"Salvar"
+}

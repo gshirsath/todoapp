@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-md-8 col-sm-7 col-xs-8">
+        <span class="h4 {{taskInfo.status | lowercase}}">{{taskInfo.name}}</span>
+        <hr/>
+    </div>
+    <div class="col-md-4 col-sm-5 col-xs-4">
+        <button class="btn delete"
+                data-toggle="modal"
+                data-target="#deleteTaskId"
+                ng-click="openDeleteModal(taskInfo)">
+            <span class="glyphicon glyphicon-trash glyphicon-trash-font-weight"></span>
+        </button>
+        <input class="test check-{{taskInfo.status | lowercase}}" type="checkbox" ng-click="markTaskAsComplete(taskInfo)" data-toggle="tooltip" data-placement="auto top" title="Mark as complete!.."/>
+    </div>
+    <div class="row leftRightPadding">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <table>
+                <tr class="{{taskInfo.status | lowercase}}"><td><label translate="DESC"></label></td><td max="25">{{taskInfo.description | limitTo:50}}{{taskInfo.length < 50 ? '' : '...'}}</td></tr>
+                <tr class="{{taskInfo.status | lowercase}}"><td><label translate="STATUS"></label></td><td>{{taskInfo.status}}</td></tr>
+                <tr class="{{taskInfo.status | lowercase}}"><td><label translate="START_DATE"></label></td><td>{{taskInfo['startDate']}}</td></tr>
+                <tr class="{{taskInfo.status | lowercase}}"><td><label translate="END_DATE"></label></td><td>{{taskInfo['endDate']}}</td></tr>
+                <tr class="{{taskInfo.status | lowercase}}"><td><label translate="PRIO"></label></td><td>{{taskInfo.priority}}</td></tr>
+            </table>
+        </div>
+    </div>
+</div>
