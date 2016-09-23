@@ -10,8 +10,15 @@
 
         var dc = this;
         dc.allStatus =  ['OPENED','INPROGRESS','COMPLETED','INVALID'];
+        dc.allPriority =  ['LOW','MEDIUM','HIGH'];
+
+       /* dc.allStatus =  [
+            {statusName: 'OPENED'},{statusName: 'INPROGRESS'},{statusName: 'COMPLETED'},{statusName: 'INVALID'}
+        ];*/
         dc.loadAllTask = loadAllTask;
-        dc.selectedStatus = '';
+        /*dc.selectedStatus = '';*/
+        dc.taskStatus = '';
+        dc.taskPriority = '';
         dc.openAddNewTaskModal = openAddNewTaskModal;
 
         loadAllTask();
@@ -34,6 +41,7 @@
                     $scope.addTask = addTask;
                     $scope.resetForm = resetForm;
                     $scope.allStatus = ['OPEN', 'INPROGRESS', 'COMPLETED', 'INVALID'];
+                    $scope.allPriority =  ['LOW','MEDIUM','HIGH'];
                     function closePopup() {
                         $uibModalInstance.dismiss('cancel');
                     }

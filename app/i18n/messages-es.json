@@ -14,5 +14,6 @@
   "DELETE_BUTTON": "Borrar",
   "CLOSE_BUTTON": "Cerca",
   "RESET_BUTTON":"Reiniciar",
-  "SAVE_BUTTON":"Salvar"
+  "SAVE_BUTTON":"Salvar",
+  "SHOW_TASKS_CHART":"Mostrar tareas en las cartas"
 }

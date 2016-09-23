@@ -1,27 +1,41 @@
-<div class="container" id="header">
-    <div class="row" ng-controller="TranslateLangController as tlc">
-        <div class="col-md-8 col-sm-8 col-xs-12">
-            <h1 class="heading1"><strong translate="TITLE"></strong></h1>
-            <h4 class="heading4" translate="SUB_TITLE"></h4>
-        </div>
-        <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="lang">
-                <a href="" ng-click="tlc.changeLanguage('en')" translate="EN_LANG_TITLE"></a>
-                <span>|</span>
-                <a href="" ng-click="tlc.changeLanguage('es')" translate="DE_LANG_TITLE"></a>
-            </div>
-        </div>
-    </div>
-</div>
-<hr/>
+
 <div class="container" id="body" >
     <div class="row">
         <div class="col-md-6 col-sm-6 col-xs-8">
-            <select class="form-control form-control-select" ng-model="selectedStatus"  ng-options="selectedStatus for selectedStatus in dc.allStatus">
-                <option value="">-Select status-</option>
-            </select>
+            <div class="col-md-6 col-sm-6 col-xs-6 padding-left">
+                <select class="form-control form-control-select" ng-model="taskStatus"  ng-options="taskStatus for taskStatus in dc.allStatus">
+                    <option value="">-Select Status-</option>
+                </select>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <!--<select class="form-control form-control-select" ng-model="taskPriority"  ng-options="taskPriority for taskPriority in dc.allPriority">
+                    <option value="">-Select Priority-</option>
+                </select>-->
+                <select ng-model="taskPriority" multiple ng-multiple="true"
+                        ng-options="taskPriority as taskPriority for taskPriority in dc.allPriority">
+                </select>
+                <!--<ui-select multiple ng-model="taskPriority" theme="bootstrap"  close-on-select="false" >
+                    <ui-select-match placeholder="Select prioprity...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
+                    <ui-select-choices repeat="person.email as person in ctrl.people | propsFilter: {name: $select.search, age: $select.search}">
+                        <div ng-bind-html="person.name | highlight: $select.search"></div>
+                        <small>
+                            email: {{person.email}}
+                            age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
+                        </small>
+                    </ui-select-choices>
+                </ui-select>-->
+                <p>Selected: {{multipleDemo.selectedPeopleSimple}}</p>
+                {{taskPriority}}******
+            </div>
+            <!--<ui-select ng-model="taskStatus.selected" theme="boostrap">
+                <ui-select-match placeholder="-Select Status-">{{$select.selected.statusName}}</ui-select-match>
+                <ui-select-choices repeat="s in dc.allStatus">
+                    {{s.statusName}}
+                </ui-select-choices>
+            </ui-select>-->
         </div>
         <div class="col-md-6 col-sm-6 col-xs-4" >
+            <a ui-sref="charts" class="underline" translate="SHOW_TASKS_CHART"></a>
             <button type="button" class="btn btn-primary add-task-btn-float-right" id="addTaskBtn" translate="TASK_BUTTON" ng-click="dc.openAddNewTaskModal()">
                 <span class="glyphicon glyphicon-plus"></span>
             </button>
@@ -30,12 +44,4 @@
     <hr />
     <!--<render-dashboard-tasks tasks="ALL_TASKS"></render-dashboard-tasks>-->
     <render-dashboard-tasks></render-dashboard-tasks>
-</div>
-<hr/>
-<div class="container text-right" id="footer">
-    <div class="row center">
-        <div class="col-md-12">
-            <h4>Powered by SemanticBits</h4>
-        </div>
-    </div>
 </div>

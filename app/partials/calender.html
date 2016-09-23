@@ -1,7 +1,9 @@
 <div class="row">
     <div class="col-md-6">
-        <p class="input-group">
-            <input type="text" class="form-control" uib-datepicker-popup="{{calDateFormat}}" name="fieldname" ng-model="modalname" is-open="popup.opened" datepicker-options="dateOptions" ng-required="mandatoryfildevalue" close-text="Close" />
+        <p class="input-group {{inputclass}}">
+            <input type="text" class="form-control" uib-datepicker-popup="{{calDateFormat}}"
+                   name="fieldname" ng-model="modalname" is-open="popup.opened" datepicker-options="dateOptions"
+                   ng-required="mandatoryfildevalue" close-text="Close" />
             <span class="input-group-btn">
                 <button type="button" class="btn btn-default" ng-click="openCal()"><i class="glyphicon glyphicon-calendar"></i></button>
             </span>

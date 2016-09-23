@@ -1,0 +1,62 @@
+
+<div class="row">
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <div class="col-md-12 text-center"><h3>Bar Chart For Task </h3></div>
+       <canvas id="bar" class="chart chart-bar"
+               chart-data="cc.barChartParams['dataForBarChart']" chart-labels="cc.barChartParams['labelsForBarChart']" chart-series="cc.barChartParams['series']" chart-options="cc.barChartParams['options']" chart-colors="cc.barChartParams['colours']"></canvas>
+  </div>
+ <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+     <div class="col-md-12 text-center"><h3>Bar Chart For Task Based On Priority </h3></div>
+     <canvas id="bar2" class="chart chart-bar"
+             chart-data="cc.barChartParams2['dataForBarChart']" chart-labels="cc.barChartParams2['labelsForBarChart']" chart-series="cc.barChartParams2['series']" chart-options="cc.barChartParams2['options']" chart-colors="cc.barChartParams2['colours']"></canvas>
+     <!--<div class="col-md-12 text-center"><h3>Pie Chart For Task Priority </h3></div>
+     <canvas id="allTaskPrio" class="chart chart-pie"
+             chart-data="cc.pieChartparams['dataForPieChart']" chart-labels="cc.pieChartparams['labelsForPieChart']" chart-options="cc.pieChartparams['pieChartOptions']" chart-colors="cc.pieChartparams['colors']">
+     </canvas>-->
+ </div>
+</div>
+<hr/>
+<div class="row">
+    <div class="col-md-12 text-center"><h3>Pie Chart For All Task Priority </h3></div>
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" >
+        <canvas id="allTaskPrio" class="chart chart-pie chart-xs"
+                chart-data="cc.pieChartparams['dataForPieChart']" chart-labels="cc.pieChartparams['labelsForPieChart']"
+                chart-options="cc.pieChartparams['pieChartOptions']" chart-colors="cc.pieChartparams.colours" >
+        </canvas>
+    </div>
+</div>
+
+<hr/>
+<div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class="col-md-12 text-center"><h3>Pie Chart For Open Task Priority </h3></div>
+        <canvas id="openTaskPrio" class="chart chart-pie" chart-data="cc.openPieChartparams['dataForPieChartOpen']"
+                chart-labels="cc.openPieChartparams['labelsForPieChart']" chart-options="cc.openPieChartparams['pieChartOptions']" >
+        </canvas>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class="col-md-12 text-center"><h3>Pie Chart For In-progress Task Priority </h3></div>
+        <canvas id="inproTaskPrio" class="chart chart-pie" chart-data="cc.inproPieChartparams['dataForPieChartInpro']"
+                chart-labels="cc.inproPieChartparams['labelsForPieChart']" chart-options="cc.inproPieChartparams['pieChartOptions']"
+                chart-colors="cc.inproPieChartparams.colours">
+        </canvas>
+    </div>
+</div>
+<hr/>
+<div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class="col-md-12 text-center"><h3>Pie Chart For Completed Task Priority </h3></div>
+        <canvas id="completedTaskPrio" class="chart chart-pie"
+                chart-data="cc.completedPieChartparams.data" chart-labels="cc.completedPieChartparams['labelsForPieChart']"
+                chart-options="cc.completedPieChartparams['options']" chart-colors="cc.completedPieChartparams.colours">
+        </canvas>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class="col-md-12 text-center"><h3>Pie Chart For Invalid Task Priority </h3></div>
+        <canvas id="inavlidTaskPrio" class="chart chart-pie" chart-data="cc.invalidPieChartparams.data"
+                chart-labels="cc.invalidPieChartparams['labelsForPieChart']" chart-options="cc.invalidPieChartparams['options']"
+                chart-colors="cc.invalidPieChartparams.colours" >
+        </canvas>
+    </div>
+</div>
+

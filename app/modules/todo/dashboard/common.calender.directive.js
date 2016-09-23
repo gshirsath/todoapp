@@ -22,7 +22,7 @@
          }
          scope.dateOptions = {
             dateDisabled: disabled,
-            formatYear: 'yy',
+            formatYear: 'yyyy',
             maxDate: new Date(2016, 12, 31),
             minDate: new Date(),
             startingDay: 1
@@ -36,12 +36,12 @@
          function openCal() {
             scope.popup.opened = true;
          };
-         function setDate(year, month, day) {
-            scope.modalname = new Date(year, month, day);
+         function setDate(day, month, year) {
+            scope.modalname = new Date( day, month, year);
          };
 
-         scope.calDateFormat = 'dd.MM.yyyy';
-         //scope.altInputFormats = 'M!/d!/yyyy';
+         scope.calDateFormat = 'dd-MM-yyyy';
+         scope.altInputFormats = 'dd-MM-yyyy';
 
          scope.popup = {
             opened: false
@@ -86,7 +86,8 @@
          scope:{
             mandatoryfildevalue: "=mandatoryfildevalue",
             modalname: "=datemodalname",
-            fieldname: "=datefieldname"
+            fieldname: "=datefieldname",
+            inputclass: "="
          },
          templateUrl: '/app/partials/calender.html',
          link: link

@@ -14,5 +14,6 @@
   "DELETE_BUTTON": "Delete",
   "CLOSE_BUTTON":"Close",
   "RESET_BUTTON":"Reset",
-  "SAVE_BUTTON":"Save"
+  "SAVE_BUTTON":"Save",
+  "SHOW_TASKS_CHART":"Show tasks on charts"
 }

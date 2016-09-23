@@ -43,7 +43,7 @@
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <!--<input type="text" ng-model="task.status" name="tStatus" required="" />-->
-                    <select class="form-control input-sm" ng-model="task.status" name="tStatus" ng-options="taskStatus for taskStatus in allStatus" required="">
+                    <select class="form-control input-sm select-width" ng-model="task.status" name="tStatus" ng-options="taskStatus for taskStatus in allStatus" required="">
                         <option value="">-Select status-</option>
                     </select>
                     <div ng-show="form.$submitted || form.tStatus.$touched">
@@ -58,7 +58,7 @@
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <!--<input type="text" ng-model="task['start-date']" name="tStartDate" required="" />-->
                         <!--<common-date-picker optionalfildevalue="true" datemodalname ="'task[\'start-date\']'" datefieldname="'tStartDate'"></common-date-picker>-->
-                    <common-date-picker mandatoryfildevalue="true" datemodalname ="task.startDate" datefieldname="'tStartDate'"></common-date-picker>
+                    <common-date-picker mandatoryfildevalue="true" datemodalname ="task.startDate" datefieldname="'tStartDate'" inputclass="'select-width'"></common-date-picker>
                     <br />
                     <div ng-show="form.$submitted || form.tStartDate.$touched">
                         <span ng-show="form.tStartDate.$error.required" class="text-danger">Task start date is required.</span>
@@ -71,7 +71,7 @@
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <!--<input class="" type="text" name="tEndDate" ng-model="task['end-date']" />-->
-                    <common-date-picker mandatoryfildevalue="false" datemodalname ="task.endDate" datefieldname="'tEndDate'"></common-date-picker>
+                    <common-date-picker mandatoryfildevalue="false" datemodalname ="task.endDate" datefieldname="'tEndDate'" inputclass="'select-width'"></common-date-picker>
                 </div>
             </div>
             <div class="row top-bottom-margin">
@@ -79,7 +79,10 @@
                     <label translate="PRIO"></label>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <input type="text" ng-model="task.priority" name="tPriority" required="" />
+                    <!--<input type="text" ng-model="task.priority" name="tPriority" required="" />-->
+                    <select class="form-control input-sm select-width" ng-model="task.priority" name="tPriority" ng-options="taskPriority for taskPriority in allPriority" required="">
+                        <option value="">-Select Priority-</option>
+                    </select>
                     <br />
                     <div ng-show="form.$submitted || form.tPriority.$touched">
                         <span ng-show="form.tPriority.$error.required" class="text-danger">Task priority is required.</span>

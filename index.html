@@ -15,6 +15,9 @@
   <!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">-->
   <link rel="stylesheet" href="app/app.css">
   <link rel="stylesheet" href="app/media.css">
+  <link rel="stylesheet" href="app/bower_components/angular-ui-select/dist/select.min.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css">
   <script src="app/bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
   <base href="/">
 </head>
@@ -22,9 +25,33 @@
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
+  <div class="container" id="header">
+    <div class="row" ng-controller="TranslateLangController as tlc">
+      <div class="col-md-8 col-sm-8 col-xs-12">
+        <h1 class="heading1"><strong translate="TITLE"></strong></h1>
+        <h4 class="heading4" translate="SUB_TITLE"></h4>
+      </div>
+      <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="lang">
+          <a href="" ng-click="tlc.changeLanguage('en')" translate="EN_LANG_TITLE"></a>
+          <span>|</span>
+          <a href="" ng-click="tlc.changeLanguage('es')" translate="DE_LANG_TITLE"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr/>
 
   <!--<div ng-view></div>-->
   <div ui-view></div>
+  <hr/>
+  <div class="container text-right" id="footer">
+    <div class="row center">
+      <div class="col-md-12">
+        <h4>Powered by SemanticBits</h4>
+      </div>
+    </div>
+  </div>
 
 
   <!-- In production use:
@@ -34,9 +61,11 @@
   <script src="app/bower_components/angular-route/angular-route.js"></script>
   <script src="app/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="app/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
-  <script src="app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="app/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
   <script src="app/bower_components/angular-translate/angular-translate.js"></script>
   <script src="app/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+  <script src="app/bower_components/angular-ui-select/dist/select.min.js"></script>
+  <script src="app/bower_components/angular-sanitize/angular-sanitize.js"></script>
 
   <script src="node_modules/angular-chart.js/node_modules/chart.js/dist/Chart.min.js"></script>
   <script src="node_modules/angular-chart.js/dist/angular-chart.js"></script>
@@ -51,9 +80,15 @@
   <script src="app/modules/todo/dashboard/dashboard.tasks.directive.js"></script>
   <script src="app/modules/todo/dashboard/dashboaed.customValidation.directive.js"></script>
   <script src="app/modules/todo/dashboard/common.calender.directive.js"></script>
+  <script src="app/modules/todo/dashboard/dashboard.filter.js"></script>
   <script src="app/modules/todo/app.module.js"></script>
   <script src="app/modules/todo/app.config.js"></script>
   <script src="app/modules/todo/app.run.js"></script>
+
+  <script src="app/modules/todo/chart/chart.module.js"></script>
+  <script src="app/modules/todo/chart/chart.config.js"></script>
+  <script src="app/modules/todo/chart/chart.controller.js"></script>
+  <script src="app/modules/todo/chart/chart.factory.js"></script>
 
 </body>
 </html>

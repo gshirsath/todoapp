@@ -7,10 +7,13 @@
         <button class="btn delete"
                 data-toggle="modal"
                 data-target="#deleteTaskId"
-                ng-click="openDeleteModal(taskInfo)">
+                ng-click="openDeleteModal(taskInfo)"
+                uib-popover="Delete Task..!" popover-trigger="'mouseenter'">
             <span class="glyphicon glyphicon-trash glyphicon-trash-font-weight"></span>
         </button>
-        <input class="test check-{{taskInfo.status | lowercase}}" type="checkbox" ng-click="markTaskAsComplete(taskInfo)" data-toggle="tooltip" data-placement="auto top" title="Mark as complete!.."/>
+        <input class="test check-{{taskInfo.status | lowercase}}"
+               type="checkbox" ng-click="markTaskAsComplete(taskInfo)"
+               uib-popover="Mark as complete..!" popover-trigger="'mouseenter'"/>
     </div>
     <div class="row leftRightPadding">
         <div class="col-md-12 col-sm-12 col-xs-12">

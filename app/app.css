@@ -12,6 +12,7 @@ body {
   border: 2px solid black;
   margin: 0.2%!important;
   background-color: #EDEFF0;
+  color: #474d52 ;
 }
 .leftRightPadding {
   padding-left: 5%;
@@ -24,9 +25,14 @@ body {
 }
 .task-invalid button.delete {
   background-color: #EDEFF0;
+  transition: all 0.3s ease 0s;
 }
 .delete {
   background-color: #fff;
+  transition: all 0.3s ease 0s;
+}
+.delete:hover {
+  transform: translateY(-4px);
 }
 .task {
   min-width: 200px;
@@ -37,11 +43,11 @@ body {
  /* border: 1px solid #ddd;*/
   background-color: #fff;
 }
-#header > div > div > div.lang {
+.lang {
   float:right;
   margin:6% 0%;
 }
-#header > div > div > div.lang a{
+.lang a{
   text-decoration: underline;
 }
 #body > div > div.row {
@@ -49,6 +55,7 @@ body {
 }
 .form-control-select {
   height: 27px !important;
+  width: 100%;
   padding: 3px 12px !important;
   border-color: #cccccc;
   -webkit-box-shadow: none;
@@ -62,8 +69,11 @@ body hr {
   border:none;
   border-bottom: 2px solid #000;
 }
+.float-left {
+  float: left;
+}
 /* Tooltip */
-.test + .tooltip > .tooltip-inner {
+/*.test + .tooltip > .tooltip-inner {
   background-color: #FFFFFF;
   color: #7F8A94;
   border: 1px solid gray;
@@ -71,27 +81,13 @@ body hr {
   font-size: 14px;
   border-style: ridge;
 
+}*/
+.padding-left {
+  padding-left: 0%!important;
 }
-/* Tooltip on top */
-.test + .tooltip.top > .tooltip-arrow {
-  border-top: 5px solid gray;
-  /*border-left: solid transparent 5px;
-  left: 90%;
-  margin-left: 0;*/
+.underline {
+  text-decoration: underline;
 }
-/* Tooltip on bottom */
-.test + .tooltip.bottom > .tooltip-arrow {
-  border-top: 5px solid gray;
-}
-/* Tooltip on left */
-.test + .tooltip.left > .tooltip-arrow {
-  border-top: 5px solid gray;
-}
-/* Tooltip on right */
-.test + .tooltip.right > .tooltip-arrow {
-  border-top: 5px solid gray;
-}
-
 .invalid {
   text-decoration: line-through;
   color: #d7d7d7;
@@ -127,7 +123,27 @@ input[type="checkbox"].check-completed {
 .card {
   box-shadow: 0px 5px 5px -4px rgba(0, 0, 0, 0.75);
 }
+.grow {
+  transition: all .2s ease-in-out;
+  /*opacity: 1;*/
+  /*filter: alpha(opacity=100);*/ /* internet explorer */
+}
+.grow:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+  /*filter: alpha(opacity=60);*/ /* internet explorer */
+}
 .top-bottom-margin {
   margin-top: 1%;
   margin-bottom: 1%;
 }
+.select-width {
+  width: 187px;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .select-width {
+    width: 175px;
+  }
+}
+
+
