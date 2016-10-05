@@ -6,16 +6,22 @@
     angular
         .module('todoApp')
         .config(appConfig);
-    appConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider', '$translateProvider'];
-    function appConfig($stateProvider, $urlRouterProvider, $locationProvider, $translateProvider) {
-        $urlRouterProvider.otherwise('/');
+    appConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider', '$translateProvider','$provide'];
+    function appConfig($stateProvider, $urlRouterProvider, $locationProvider, $translateProvider, $provide) {
         $stateProvider
             .state('home',{
-                url:'/',
+                url:'/home',
                 templateUrl: '/app/partials/dashboard.html',
                 controller: 'DashBoardController',
                 controllerAs: 'dc'
+            })
+            .state('dashboard',{
+                url:'/dashboard',
+                templateUrl: 'app/partials/dashboard.html',
+                controller: 'DashBoardController',
+                controllerAs: 'dc'
             });
+        $urlRouterProvider.otherwise('/');
         $locationProvider.html5Mode(true);
 
 /*        $translateProvider.translations('en',{

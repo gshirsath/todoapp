@@ -1,0 +1,11 @@
+<div class="add-task-btn-float-right margin-all row">
+    <a ui-sref="home" class="underline" translate="SHOW_DASHBOARD"></a>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="col-md-12 text-center"><h3>{{ 'PIE_CHART' | translate:{ taskstatus: cc.tskStatus } }} </h3></div>
+        <canvas id="taskPrio" class="chart chart-pie" chart-data="cc.selectedTaskPieChartparams.data"
+                chart-labels="cc.selectedTaskPieChartparams['labelsForPieChart']" chart-options="cc.selectedTaskPieChartparams['options']">
+        </canvas>
+    </div>
+</div>

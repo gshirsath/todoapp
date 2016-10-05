@@ -1,5 +1,9 @@
 <div class="row">
-    <div class="col-md-4 col-sm-4 col-xs-12 panel-default card grow task task-{{taskInfo.status | lowercase}}" ng-repeat="taskInfo in ALL_TASKS | filter:(taskStatus!=null ? taskStatus : '') | filterWithOr: (taskPriority!=null ? {priority:taskPriority} : '')  ">
-        <render-dashboard-task task="taskInfo" ></render-dashboard-task>
+<!--    <div class="col-md-4 col-sm-4 col-xs-12 panel-default card grow task task-{{taskInfo.status | lowercase}}" ng-repeat="taskInfo in ALL_TASKS | filter:(taskStatus!=null ? taskStatus : '') | filterWithOr: (taskPriority!=null ? {priority:taskPriority} : '')  ">-->
+    <div class="col-md-4 col-sm-4 col-xs-12 panel-default card grow task task-{{taskInfo.status | lowercase}}"
+         ng-repeat="taskInfo in ALL_TASKS |
+         filter:( (dc.taskstatus.selected!=null && dc.taskstatus.selected.val!=null) ? dc.taskstatus.selected.name : '') |
+         filterWithOr: (dc.taskPriority.selected!='' ? {priority: dc.taskPriority.selected} : '')">
+        <render-dashboard-task task="taskInfo" userRole="{{userRole}}" accessLevel="{{accessLevel}}"></render-dashboard-task>
     </div>
 </div>

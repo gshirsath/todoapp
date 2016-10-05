@@ -7,6 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>My AngularJS App</title>
+  <base href="/">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="app/bower_components/html5-boilerplate/dist/css/normalize.css">
@@ -19,20 +20,30 @@
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css">
   <script src="app/bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-  <base href="/">
 </head>
 <body>
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-  <div class="container" id="header">
-    <div class="row" ng-controller="TranslateLangController as tlc">
+  <div class="container" id="header" onload="loadAllTask()">
+    <div class="row">
       <div class="col-md-8 col-sm-8 col-xs-12">
         <h1 class="heading1"><strong translate="TITLE"></strong></h1>
         <h4 class="heading4" translate="SUB_TITLE"></h4>
       </div>
+      <div ng-controller="LoginController as lc" class="login-logout-right-margin">
+        <p class="float-right">
+          <span class="glyphicon glyphicon-log-in" ng-show="logedIn==false"  ng-hide="logedIn==true" ></span>
+          <a href="" ng-click="lc.loginModal()" translate="LOGIN" ng-show="logedIn==false"  ng-hide="logedIn==true" >
+          </a>
+        </p>
+        <p class="float-right">
+          <span class="glyphicon glyphicon-log-out" ng-show="logedIn==true"  ng-hide="logedIn==false"></span>
+          <a href="" ng-click="lc.logOut()" translate="LOGOUT" ng-show="logedIn==true"  ng-hide="logedIn==false" ></a>
+        </p>
+      </div>
       <div class="col-md-4 col-sm-4 col-xs-12">
-        <div class="lang">
+        <div class="lang" ng-controller="TranslateLangController as tlc">
           <a href="" ng-click="tlc.changeLanguage('en')" translate="EN_LANG_TITLE"></a>
           <span>|</span>
           <a href="" ng-click="tlc.changeLanguage('es')" translate="DE_LANG_TITLE"></a>
@@ -42,7 +53,6 @@
   </div>
   <hr/>
 
-  <!--<div ng-view></div>-->
   <div ui-view></div>
   <hr/>
   <div class="container text-right" id="footer">
@@ -60,8 +70,8 @@
   <script src="app/bower_components/angular/angular.js"></script>
   <script src="app/bower_components/angular-route/angular-route.js"></script>
   <script src="app/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-  <script src="app/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
-  <script src="app/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script src="app/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+  <script src="app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
   <script src="app/bower_components/angular-translate/angular-translate.js"></script>
   <script src="app/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
   <script src="app/bower_components/angular-ui-select/dist/select.min.js"></script>
@@ -73,14 +83,7 @@
   <script src="app/components/version/version.js"></script>
   <script src="app/components/version/version-directive.js"></script>
   <script src="app/components/version/interpolate-filter.js"></script>
-  <script src="app/modules/todo/dashboard/dashboard.controller.js"></script>
-  <script src="app/modules/todo/dashboard/dashboard.factory.js"></script>
-  <script src="app/modules/todo/dashboard/dashboard.translate.controller.js"></script>
-  <script src="app/modules/todo/dashboard/dashboard.task.directive.js"></script>
-  <script src="app/modules/todo/dashboard/dashboard.tasks.directive.js"></script>
-  <script src="app/modules/todo/dashboard/dashboaed.customValidation.directive.js"></script>
-  <script src="app/modules/todo/dashboard/common.calender.directive.js"></script>
-  <script src="app/modules/todo/dashboard/dashboard.filter.js"></script>
+
   <script src="app/modules/todo/app.module.js"></script>
   <script src="app/modules/todo/app.config.js"></script>
   <script src="app/modules/todo/app.run.js"></script>
@@ -89,6 +92,21 @@
   <script src="app/modules/todo/chart/chart.config.js"></script>
   <script src="app/modules/todo/chart/chart.controller.js"></script>
   <script src="app/modules/todo/chart/chart.factory.js"></script>
+
+  <script src="app/modules/todo/login/login.module.js"></script>
+  <script src="app/modules/todo/login/login.config.js"></script>
+  <script src="app/modules/todo/login/login.controller.js"></script>
+  <script src="app/modules/todo/login/login.factory.js"></script>
+
+  <script src="app/modules/todo/dashboard/dashboard.controller.js"></script>
+  <script src="app/modules/todo/dashboard/dashboard.factory.js"></script>
+  <script src="app/modules/todo/dashboard/dashboard.translate.controller.js"></script>
+  <script src="app/modules/todo/dashboard/dashboard.task.directive.js"></script>
+  <script src="app/modules/todo/dashboard/dashboard.tasks.directive.js"></script>
+  <script src="app/modules/todo/dashboard/dashboaed.customValidation.directive.js"></script>
+  <script src="app/modules/todo/dashboard/common.directive.js"></script>
+  <script src="app/modules/todo/dashboard/dashboard.filter.js"></script>
+
 
 </body>
 </html>

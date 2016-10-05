@@ -9,9 +9,10 @@ angular.module('todoApp', [
     'dashboard.task.directives',
     'dashboard.tasks.directives',
     'dashboard.customValidation.directives',
-    'common.calender.directives',
+    'common.directives',
     'ui.select',
     'ngSanitize',
     'task.charts',
-    'dashboard.filters'
+    'dashboard.filters',
+    'login'
 ]);

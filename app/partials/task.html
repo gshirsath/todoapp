@@ -4,7 +4,7 @@
         <hr/>
     </div>
     <div class="col-md-4 col-sm-5 col-xs-4">
-        <button class="btn delete"
+        <button class="btn delete" ng-if="uRole!==1 && uRole===4 && aLevel===4"
                 data-toggle="modal"
                 data-target="#deleteTaskId"
                 ng-click="openDeleteModal(taskInfo)"
@@ -12,6 +12,7 @@
             <span class="glyphicon glyphicon-trash glyphicon-trash-font-weight"></span>
         </button>
         <input class="test check-{{taskInfo.status | lowercase}}"
+               ng-if="uRole!==1"
                type="checkbox" ng-click="markTaskAsComplete(taskInfo)"
                uib-popover="Mark as complete..!" popover-trigger="'mouseenter'"/>
     </div>

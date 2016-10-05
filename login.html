@@ -1,0 +1,48 @@
+<!--
+<form >
+    <input name="uname" ng-model="lc.uname" placeholder="Username"><br>
+    <input name="pwd" ng-model="lc.pwd" placeholder="Password" type="password"><br>
+    <button type="submit" ng-click="lc.submmit()">Log in</button>
+</form>-->
+<div class="">
+    <div class="modal-header">
+        <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <h3 class="modal-title" translate="LOGIN_HEAD"></h3>
+            </div>
+        </div>
+    </div>
+    <div class="modal-body">
+        <form name="form" class="css-form">
+            <div class="row form-group">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <label class="pull-right" translate="USER_NAME"></label>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <input class="form-control" type="text" ng-model="uname" name="uname"/>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <label class="pull-right" translate="PASSWORD"></label>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <input class="form-control" type="password" ng-model="pwd" name="pwd"/>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 login-btn-padding-right">
+                <button type="button" class="btn btn-primary pull-right" ng-click="login()" translate="LOGIN"></button>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 login-btn-padding-left">
+                <button class="btn btn-primary pull-left" type="button" ng-click="closeLoginModal()" translate="CLOSE_BUTTON"></button>
+            </div>
+        </div>
+    </div>
+</div>

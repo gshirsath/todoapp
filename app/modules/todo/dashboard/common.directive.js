@@ -1,8 +1,12 @@
 'use strict';
 (function () {
    angular
-       .module('common.calender.directives',[])
+       .module('common.directives',[])
        .directive('commonDatePicker',commonDatePicker);
+   angular
+       .module('common.directives')
+       .directive('activeLink',activeLink);
+   activeLink.$inject = ['$location'];
    commonDatePicker.$inject = [];
    
    function commonDatePicker() {
@@ -93,5 +97,36 @@
          link: link
       };
    }
+
+/*   function activeLink($location) {
+      return {
+         restrict: 'A',
+         replace: true,
+         link: function (scope, elem) {
+            //after the route has changed
+            scope.$on("$routeChangeSuccess", function () {
+               var hrefs = ['/#' + $location.path(),
+                  '#' + $location.path(), //html5: false
+                  $location.path()]; //html5: true
+               console.log("hrefs............");
+               console.log(hrefs);
+               console.log("hrefs............End");
+               angular.forEach(elem.find('a'), function (a) {
+                  a = angular.element(a);
+                  if (-1 !== hrefs.indexOf(a.attr('href'))) {
+                     console.log("active if............");
+                     a.parent().addClass('active');
+                     console.log(a);
+                     console.log("active if............End");
+                  } else {
+                     console.log("active else............");
+                     a.parent().removeClass('active');
+                     console.log("active else............End");
+                  };
+               });
+            });
+         }
+      }
+   }*/
    
 }());

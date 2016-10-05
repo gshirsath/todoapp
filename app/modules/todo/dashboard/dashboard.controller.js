@@ -9,19 +9,22 @@
     function DashBoardController($scope, dashboardService, $rootScope, $uibModal, $q) {
 
         var dc = this;
-        dc.allStatus =  ['OPENED','INPROGRESS','COMPLETED','INVALID'];
+        /*dc.allStatus =  ['OPENED','INPROGRESS','COMPLETED','INVALID'];*/
         dc.allPriority =  ['LOW','MEDIUM','HIGH'];
-
-       /* dc.allStatus =  [
-            {statusName: 'OPENED'},{statusName: 'INPROGRESS'},{statusName: 'COMPLETED'},{statusName: 'INVALID'}
-        ];*/
         dc.loadAllTask = loadAllTask;
         /*dc.selectedStatus = '';*/
-        dc.taskStatus = '';
+        dc.taskstatus = {};
         dc.taskPriority = '';
+        dc.allStatus =  [
+            {name: 'OPENED', val: 'OPENED'},
+            {name: 'INPROGRESS',val: 'INPROGRESS'},
+            {name: 'COMPLETED',val: 'COMPLETED'},
+            {name: 'INVALID',val: 'INVALID'},
+            {name: 'ALL',val: null}
+        ];
         dc.openAddNewTaskModal = openAddNewTaskModal;
 
-        loadAllTask();
+        /*loadAllTask();*/
 
         function loadAllTask() {
             var getAllTask = dashboardService.readTask();
@@ -40,7 +43,7 @@
                     $scope.closePopup = closePopup;
                     $scope.addTask = addTask;
                     $scope.resetForm = resetForm;
-                    $scope.allStatus = ['OPEN', 'INPROGRESS', 'COMPLETED', 'INVALID'];
+                    $scope.allStatus = ['OPENED', 'INPROGRESS', 'COMPLETED', 'INVALID'];
                     $scope.allPriority =  ['LOW','MEDIUM','HIGH'];
                     function closePopup() {
                         $uibModalInstance.dismiss('cancel');
@@ -50,11 +53,11 @@
                         console.log(task);
                         console.log(form.$valid)
                         if(form.$valid) {
-                            var t = dashboardService.createTask(task);
+                            var taskCreated = dashboardService.createTask(task);
                             //$rootScope.ALL_TASKS.push(task);
                             console.log("create task function returns -");
-                            console.log(t);
-                            if(t) {
+                            console.log(taskCreated);
+                            if(taskCreated) {
                                 $uibModalInstance.close();
                             }
                         }

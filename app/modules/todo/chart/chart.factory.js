@@ -12,9 +12,107 @@
             getAllTasksForOpen: getAllTasksForOpen,
             getAllTasksForInprogress: getAllTasksForInprogress,
             getAllTasksForIvalid: getAllTasksForIvalid,
-            getAllTaskPriorityCount: getAllTaskPriorityCount
+            getAllTaskPriorityCount: getAllTaskPriorityCount,
+            getSelectedTaskPriorityCount: getSelectedTaskPriorityCount
         }
         return service;
+        
+        function getSelectedTaskPriorityCount(taskStatus, taskPriority) {
+            var selectedTask = [];
+            var i;
+            var count = 0, selectedTaskLowPrio = 0,selectedTaskMidPrio = 0, selectedTaskHighPrio = 0;
+            if(taskStatus && taskStatus!='ALL') {
+                console.log("TaskStatus - :"+taskStatus);
+                for(i = 0; i<$rootScope.ALL_TASKS.length; i++) {
+                    if($rootScope.ALL_TASKS[i].status == taskStatus) {
+                        selectedTask[i] = $rootScope.ALL_TASKS[i];
+                        count++;
+                        if(taskPriority && taskPriority.length > 0) {
+                            console.log("task prio length > 0___:");
+                            var j;
+                            for(j=0; j<taskPriority.length; j++) {
+                                if(taskPriority[j] == "LOW"  && $rootScope.ALL_TASKS[i].priority == "LOW") {
+                                    selectedTaskLowPrio++;
+                                }
+                                else if(taskPriority[j] ==  "MEDIUM" && $rootScope.ALL_TASKS[i].priority ==  "MEDIUM") {
+                                    selectedTaskMidPrio++;
+                                }
+                                else if(taskPriority[j] == "HIGH" && $rootScope.ALL_TASKS[i].priority == "HIGH") {
+                                    selectedTaskHighPrio++;
+                                }
+                            }
+                            console.log("In If blok");
+                            console.log("Low :" + selectedTaskLowPrio);
+                            console.log("Mid :" + selectedTaskMidPrio);
+                            console.log("High :" + selectedTaskHighPrio);
+                        }
+                        else {
+                            console.log("task prio length < 0___:");
+                            if($rootScope.ALL_TASKS[i].priority == "LOW") {
+                                selectedTaskLowPrio++;
+                            }
+                            else if($rootScope.ALL_TASKS[i].priority ==  "MEDIUM") {
+                                selectedTaskMidPrio++;
+                            }
+                            else if($rootScope.ALL_TASKS[i].priority == "HIGH") {
+                                selectedTaskHighPrio++;
+                            }
+                            console.log("In else blok");
+                            console.log("Low :" + selectedTaskLowPrio);
+                            console.log("Mid :" + selectedTaskMidPrio);
+                            console.log("High :" + selectedTaskHighPrio);
+                        }
+                    }
+                }
+                return [count,selectedTaskLowPrio,selectedTaskMidPrio,selectedTaskHighPrio ];
+            }
+            else {
+                console.log("TaskStatus in else- :"+taskStatus);
+                for(i = 0; i<$rootScope.ALL_TASKS.length; i++) {
+                    /*if($rootScope.ALL_TASKS[i].status == taskStatus) {*/
+                        selectedTask[i] = $rootScope.ALL_TASKS[i];
+                        count++;
+                        if(taskPriority && taskPriority.length > 0) {
+                            console.log("task prio length > 0___:");
+                            var j;
+                            for(j=0; j<taskPriority.length; j++) {
+                                if(taskPriority[j] == "LOW"  && $rootScope.ALL_TASKS[i].priority == "LOW") {
+                                    selectedTaskLowPrio++;
+                                }
+                                else if(taskPriority[j] ==  "MEDIUM" && $rootScope.ALL_TASKS[i].priority ==  "MEDIUM") {
+                                    selectedTaskMidPrio++;
+                                }
+                                else if(taskPriority[j] == "HIGH" && $rootScope.ALL_TASKS[i].priority == "HIGH") {
+                                    selectedTaskHighPrio++;
+                                }
+                            }
+                            console.log("In If blok");
+                            console.log("Low :" + selectedTaskLowPrio);
+                            console.log("Mid :" + selectedTaskMidPrio);
+                            console.log("High :" + selectedTaskHighPrio);
+                        }
+                        else {
+                            console.log("task prio length < 0___:");
+                            if($rootScope.ALL_TASKS[i].priority == "LOW") {
+                                selectedTaskLowPrio++;
+                            }
+                            else if($rootScope.ALL_TASKS[i].priority ==  "MEDIUM") {
+                                selectedTaskMidPrio++;
+                            }
+                            else if($rootScope.ALL_TASKS[i].priority == "HIGH") {
+                                selectedTaskHighPrio++;
+                            }
+                            console.log("In else blok");
+                            console.log("Low :" + selectedTaskLowPrio);
+                            console.log("Mid :" + selectedTaskMidPrio);
+                            console.log("High :" + selectedTaskHighPrio);
+                        }
+                    /*}*/
+                }
+                return [count,selectedTaskLowPrio,selectedTaskMidPrio,selectedTaskHighPrio ];
+
+            }
+        }
 
         function getAllTasksForCompleted() {
             var completedTasks = [];
@@ -34,9 +132,6 @@
                     }
                 }
             }
-            console.log("Comleted : -");
-            console.log(completedTasks.length);
-            //return completedTasks;
             return [count,compLowPrio,compMidPrio,compHighPrio ];
         }
         function getAllTasksForIvalid() {
@@ -46,7 +141,6 @@
             for(i = 0; i<$rootScope.ALL_TASKS.length; i++) {
                 if($rootScope.ALL_TASKS[i].status == "INVALID") {
                     invalidTasks[i] = $rootScope.ALL_TASKS[i];
-                    console.log($rootScope.ALL_TASKS[i].status );
                     count++;
                     if($rootScope.ALL_TASKS[i].priority == "LOW") {
                         invalLowPrio++;
@@ -58,9 +152,6 @@
                     }
                 }
             }
-            console.log("Invalid : -");
-            console.log(invalidTasks.length);
-            //return invalidTasks;
             return [count,invalLowPrio,invalMidPrio,invalHighPrio ];
         }
 
@@ -82,9 +173,6 @@
                     }
                 }
             }
-            console.log("Inprogress : -");
-            console.log(inProTasks.length);
-            //return inProTasks;
             return [count,inproLowPrio,inproMidPrio,inproHighPrio];
         }
 
@@ -106,9 +194,6 @@
                     }
                 }
             }
-            console.log("Open : -");
-            console.log(openTasks.length);
-            //return openTasks;
             return [count,openLowPrio,openMidPrio,openHighPrio];
         }
 
@@ -145,11 +230,8 @@
                 }
                 if($rootScope.ALL_TASKS[i].status == "INVALID") {
                     invalidTasks[i] = $rootScope.ALL_TASKS[i];
-                    console.log($rootScope.ALL_TASKS[i].status );
                 }
             }
-
-            /*return [{"completedTasks":completedTasks}, {"openTasks":openTasks}, {"inProTasks":inProTasks}, {"invalidTasks":invalidTasks}];*/
             return [completedTasks,openTasks,inProTasks,invalidTasks];
         }
 

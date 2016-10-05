@@ -4,24 +4,36 @@
         .module('chart.controllers',[])
         .controller('ChartController',ChartController);
     ChartController.$inject = [
-        '$scope','chartService', '$rootScope', '$q'
+        '$scope','chartService', '$rootScope', '$q', '$translate', '$location', '$stateParams'
     ];
 
-    function ChartController($scope, chartService, $rootScope, $q) {
+    function ChartController($scope, chartService, $rootScope, $q, $translate,$location,$stateParams) {
         var cc =  this;
-
-        /*cc.labelsForBarChart = ['OPEN', 'INPROGRESS', 'COMPLETED', 'INVALID'];
-        cc.labelsForPieChart = ['LOW','MEDIUM','HIGH'];
-        cc.series = [];*/
+        cc.isActiveMenu = isActiveMenu;
 
         var opened = chartService.getAllTasksForOpen();
         var inpro = chartService.getAllTasksForInprogress();
         var completed = chartService.getAllTasksForCompleted();
         var invalid = chartService.getAllTasksForIvalid();
-        var x = opened[0]; var y =inpro[0]; var z = completed[0]; var a = invalid[0]
+        var x = opened[0]; var y =inpro[0]; var z = completed[0]; var a = invalid[0];
 
         var allPriority = chartService.getAllTaskPriorityCount();
+        cc.tskStatus = $stateParams.selectedTaskStatus ? $stateParams.selectedTaskStatus.name: 'All';
 
+        var selectedTask = chartService.getSelectedTaskPriorityCount($stateParams.selectedTaskStatus ? $stateParams.selectedTaskStatus.name: false,$stateParams.selectedTaskPriority);
+        
+        cc.selectedTaskPieChartparams = {
+            pieChartOptions: {
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                }
+            },
+            colours: ['#B19BD6','#e4a91d','#444fa2'],
+            data : [selectedTask[1], selectedTask[2], selectedTask[3]],
+            labelsForPieChart : ['LOW','MEDIUM','HIGH']
+        };
+        
         cc.barChartParams = {
             labelsForBarChart : [['OPEN'], ['INPROGRESS'], ['COMPLETED'], ['INVALID']],
             dataForBarChart :
@@ -73,7 +85,7 @@
         cc.pieChartparams = {
             pieChartOptions: {
                 legend: {
-                    display: false,
+                    display: true,
                     position: 'bottom'
                 }
             },
@@ -91,8 +103,8 @@
                 }
             },
             colours: ['#de0000','#E2ECD1','#444fa2'],
-            dataForPieChartOpen : [ opened[1], opened[2], opened[3] ],
-            labelsForPieChart : [['LOW'],['MEDIUM'],['HIGH']]
+            dataForPieChartOpen : [opened[1], opened[2], opened[3]],
+            labelsForPieChart : ['LOW','MEDIUM','HIGH']
 
         };
 
@@ -133,6 +145,11 @@
             data : [invalid[1], invalid[2], invalid[3]],
             labelsForPieChart : ['LOW','MEDIUM','HIGH']
 
+        };
+
+        function isActiveMenu(viewLocation) {
+            var activeClass = ($location.path().indexOf(viewLocation) > -1);
+            return activeClass;
         };
     }
 

@@ -3,40 +3,36 @@
     <div class="row">
         <div class="col-md-6 col-sm-6 col-xs-8">
             <div class="col-md-6 col-sm-6 col-xs-6 padding-left">
-                <select class="form-control form-control-select" ng-model="taskStatus"  ng-options="taskStatus for taskStatus in dc.allStatus">
-                    <option value="">-Select Status-</option>
-                </select>
+                <ui-select ng-model="dc.taskstatus.selected" theme="bootstrap">
+                    <ui-select-match placeholder="-Select Status-">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices repeat="s in dc.allStatus | filter: $select.search">
+                        {{s.name}}
+                    </ui-select-choices>
+                </ui-select>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-6">
-                <!--<select class="form-control form-control-select" ng-model="taskPriority"  ng-options="taskPriority for taskPriority in dc.allPriority">
-                    <option value="">-Select Priority-</option>
-                </select>-->
-                <select ng-model="taskPriority" multiple ng-multiple="true"
-                        ng-options="taskPriority as taskPriority for taskPriority in dc.allPriority">
-                </select>
-                <!--<ui-select multiple ng-model="taskPriority" theme="bootstrap"  close-on-select="false" >
-                    <ui-select-match placeholder="Select prioprity...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
-                    <ui-select-choices repeat="person.email as person in ctrl.people | propsFilter: {name: $select.search, age: $select.search}">
-                        <div ng-bind-html="person.name | highlight: $select.search"></div>
-                        <small>
-                            email: {{person.email}}
-                            age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
-                        </small>
+                <ui-select multiple ng-model="dc.taskPriority.selected" theme="bootstrap" ng-disabled="dc.disabled" close-on-select="false" >
+                    <ui-select-match placeholder="Select prioprity...">{{$item}}</ui-select-match>
+                    <ui-select-choices repeat="prio in dc.allPriority | filter:$select.search">
+                        <div ng-bind-html="prio | highlight: $select.search"></div>
                     </ui-select-choices>
-                </ui-select>-->
-                <p>Selected: {{multipleDemo.selectedPeopleSimple}}</p>
-                {{taskPriority}}******
+                </ui-select>
+                <!--<ui-select multiple ng-model="dc.taskPriority.selected" theme="bootstrap" ng-disabled="dc.disabled" close-on-select="false" >
+                    <ui-select-match placeholder="Select prioprity...">{{$item.name}}</ui-select-match>
+                    <ui-select-choices repeat="prio in dc.allPriority | propsFilter:{name:$select.search} ">
+                        <div ng-bind-html="prio.name | highlight: $select.search"></div>
+                    </ui-select-choices>
+                </ui-select>
+                <p>Selected: {{dc.taskPriority.selected}}</p>-->
             </div>
-            <!--<ui-select ng-model="taskStatus.selected" theme="boostrap">
-                <ui-select-match placeholder="-Select Status-">{{$select.selected.statusName}}</ui-select-match>
-                <ui-select-choices repeat="s in dc.allStatus">
-                    {{s.statusName}}
-                </ui-select-choices>
-            </ui-select>-->
-        </div>
+        </div><!--ui-sref-opts="{reload: true}"-->
         <div class="col-md-6 col-sm-6 col-xs-4" >
-            <a ui-sref="charts" class="underline" translate="SHOW_TASKS_CHART"></a>
-            <button type="button" class="btn btn-primary add-task-btn-float-right" id="addTaskBtn" translate="TASK_BUTTON" ng-click="dc.openAddNewTaskModal()">
+            <a ui-sref="showcharts({selectedTaskStatus: dc.taskstatus.selected,selectedTaskPriority:dc.taskPriority.selected})" class="underline" translate="SHOW_TASKS_CHART"></a>
+            <a ui-sref="charts" class="underline mar-left" translate="CHART_MENU"></a>
+            <button type="button" ng-if="userRole!==1"
+                    class="btn btn-primary add-task-btn-float-right"
+                    id="addTaskBtn" translate="TASK_BUTTON"
+                    ng-click="dc.openAddNewTaskModal()">
                 <span class="glyphicon glyphicon-plus"></span>
             </button>
         </div>

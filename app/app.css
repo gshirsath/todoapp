@@ -64,6 +64,13 @@ body {
 .add-task-btn-float-right {
   float: right !important;
 }
+.margin-all {
+  margin: 2% 3%;
+}
+.login-margin-top-buttom {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
 body hr {
   height:1px;
   border:none;
@@ -71,6 +78,12 @@ body hr {
 }
 .float-left {
   float: left;
+}
+.float-right {
+  float: right;
+}
+.login-logout-right-margin {
+  margin-right: -50px;
 }
 /* Tooltip */
 /*.test + .tooltip > .tooltip-inner {
@@ -87,6 +100,9 @@ body hr {
 }
 .underline {
   text-decoration: underline;
+}
+.mar-left{
+  margin-left: 6px;
 }
 .invalid {
   text-decoration: line-through;
@@ -145,5 +161,63 @@ input[type="checkbox"].check-completed {
     width: 175px;
   }
 }
+.margin-left_and_width {
+  margin-left: 27%;
+  width: 624px;
+}
+.submenu-chart{
+  transition: all 0.3s ease 0s;
+}
+.submenu-chart:hover{
+  transform: translateY(-4px);
+}
+li.activeClass {
+  background: rgba(20, 80, 10, 0.81) none repeat scroll 0 0;
+  border-radius: 4px;
+}
+.login-btn-padding-right {
+  padding-right: 5px;
+}
+.login-btn-padding-left {
+  padding-left: 5px;
+}
+/*.waves-effect {
+  -moz-user-select: none;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease-out 0s;
+  vertical-align: middle;
+  will-change: opacity, transform;
+  z-index: 1;
+}
+.waves-green {
+  background-color: rgba(76, 175, 80, 0.7);
+}
+
+.waves-effect .waves-ripple {
+  background: rgba(0, 0, 0, 0.2) none repeat scroll 0 0;
+  border-radius: 50%;
+  height: 20px;
+  margin-left: -10px;
+  margin-top: -10px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transform: scale(0);
+  transition-delay: 0s;
+  transition-duration: 0.7s;
+  transition-property: transform, opacity;
+  transition-timing-function: ease-out;
+  width: 20px;
+}
+.waves-effect.waves-light .waves-ripple {
+  background-color: rgba(255, 255, 255, 0.45);
+}
+a.waves-effect .waves-ripple {
+  z-index: -1;
+}*/
+
 
 

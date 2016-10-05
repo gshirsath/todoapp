@@ -3,12 +3,14 @@
     angular
         .module('dashboard.task.directives',[])
         .directive('renderDashboardTask',dashboardTask);
-    dashboardTask.$inject = ['dashboardService','$uibModal'];
+    dashboardTask.$inject = ['dashboardService','$uibModal', '$parse'];
 
-    function dashboardTask(dashboardService,$uibModal) {
+    function dashboardTask(dashboardService,$uibModal,$parse) {
         function link(scop, element, attr) {
             scop.openDeleteModal = openDeleteModal;
             scop.markTaskAsComplete = markTaskAsComplete;
+            scop.uRole = $parse(attr.userrole)(scop);
+            scop.aLevel = $parse(attr.accesslevel)(scop);
 
             function markTaskAsComplete(taskInfo) {
                 var task = dashboardService.markTaskAsComplete(taskInfo);

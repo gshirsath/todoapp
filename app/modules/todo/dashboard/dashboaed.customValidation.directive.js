@@ -16,7 +16,7 @@
             function taskName(modelValue, viewValue) {
 
                 if (ctrl.$isEmpty(modelValue)) {
-                    // consider empty model valid
+                    // consider empty model invalid
                     return $q.reject();
                 }
 

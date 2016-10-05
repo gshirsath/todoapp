@@ -1,0 +1,11 @@
+{
+  "injectChanges": true,
+  "files": ["./**/*.{html,css,js,png,jpg,svg,gif}"],
+  "watchOptions": {
+    "ignored": [
+      "node_modules",
+      "src/**/*.*",
+      "app/**/*.js"
+    ]
+  }
+}
