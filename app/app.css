@@ -172,9 +172,31 @@ input[type="checkbox"].check-completed {
   transform: translateY(-4px);
 }
 li.activeClass {
-  background: rgba(20, 80, 10, 0.81) none repeat scroll 0 0;
+  background-color: rgb(214, 214, 214) !important;
   border-radius: 4px;
 }
+.nav > li > a:focus, .nav > li > a:hover {
+  background-color: rgb(214, 214, 214) !important;
+}
+span.glyphicon-log-in {
+  transition: all 0.3s ease 0s;
+}
+span.glyphicon-log-in:focus, span.glyphicon-log-in:hover {
+  transform: rotate(1turn) scale(1.1);
+}
+p.float-right:hover .glyphicon-log-in, p.float-right:focus .glyphicon-log-in{
+  transform: rotate(1turn) scale(1.2);
+}
+span.glyphicon-log-out {
+  transition: all 0.3s ease 0s;
+}
+span.glyphicon-log-out:focus, span.glyphicon-log-out:hover {
+  transform: rotate(1turn) scale(1.1);
+}
+p.float-right:hover .glyphicon-log-out, p.float-right:focus .glyphicon-log-out{
+  transform: rotate(1turn) scale(1.2);
+}
+
 .login-btn-padding-right {
   padding-right: 5px;
 }
