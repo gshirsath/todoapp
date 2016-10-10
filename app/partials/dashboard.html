@@ -11,7 +11,7 @@
                 </ui-select>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-6">
-                <ui-select multiple ng-model="dc.taskPriority.selected" theme="bootstrap" ng-disabled="dc.disabled" close-on-select="false" >
+                <ui-select class="select-style" multiple ng-model="dc.taskPriority.selected" theme="bootstrap" ng-disabled="dc.disabled" close-on-select="false" >
                     <ui-select-match placeholder="Select prioprity...">{{$item}}</ui-select-match>
                     <ui-select-choices repeat="prio in dc.allPriority | filter:$select.search">
                         <div ng-bind-html="prio | highlight: $select.search"></div>
